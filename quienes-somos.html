@@ -21,13 +21,13 @@
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
-     position: relative;
-    height: 600px; 
+    position: relative;
+    height: 100px;
     display: flex;
     align-items: center;
     color: white;
     overflow: hidden;
-    margin-top: 20px;
+    margin-top: 0;
 }
 
 .qs-hero-inner {
@@ -45,8 +45,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
-    margin-bottom: 30px;
-    margin: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 .qs-card {
     background: var(--color-fondo-claro);
@@ -79,12 +79,12 @@ history {
 
 /* Bloques inferiores estilo botones */
 .qs-bottom {
-    display: flex;
-    gap: 80px;
-    justify-content: center;
-    margin: 40px 0 80px 0;
-    flex-wrap: wrap;
-     align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin: 40px auto 80px auto;
+    max-width: 1200px;
+    padding: 0 20px;
 }
 
 .footer-btn {
@@ -107,11 +107,42 @@ history {
 }
 
 .icon-card {
-    padding: 20px;
-    border-radius: 10px;
-    background: var(--color-fondo-claro);
+    padding: 35px 40px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
     text-align: center;
     font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(25, 118, 210, 0.1);
+    position: relative;
+    overflow: hidden;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primario), var(--color-acento));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.icon-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(25, 118, 210, 0.15);
+}
+
+.icon-card:hover::before {
+    transform: scaleX(1);
 }
 
 /* Botón centrado (usa tu clase .btn-primary o la sobreescribe aquí) */
@@ -201,6 +232,21 @@ history {
                 background-size: cover;
             }
 
+            .qs-bottom {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .icon-card {
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .qs-icons {
+                margin: 20px 20px 40px 20px;
+            }
+
         }
 </style>
 
@@ -217,9 +263,9 @@ history {
                 </div>
 
                 <div class="header-icons">
-                    <a href="tel:33XXXXXXXX" class="phone-btn">
+                    <a href="tel:3333333333" class="phone-btn">
                         <span>📞</span>
-                        <span>33-XXXX-XXXX</span>
+                        <span>33-3333-3333</span>
                     </a>
                     <a href="#" class="whatsapp-btn">Contáctanos</a>
                 </div>
@@ -242,28 +288,28 @@ history {
     </nav>
 
     <!-- CONTENIDO PRINCIPAL -->
-    <section class="qs-hero">
+    <section class="qs-hero" style="display: none;">
         <div class="qs-hero-inner container">
         </div>
     </section>
-    
-          <main class="main-content">
 
-            <h1 class="page-title">Nuestra Historia</h1>
-            
-            <h3 style="text-align: center; margin-top: 40px;">
+          <main class="main-content" style="padding-top: 40px; padding-bottom: 15px;">
+
+            <h1 class="page-title" style="margin-bottom: 12px;">Nuestra Historia</h1>
+
+            <h3 style="text-align: center; margin-top: 5px; margin-bottom: 25px;">
                 Mas de 15 años equipando hogares con muebles de calidad
             </h3>
           </main>
         
           
                
-            <p style="margin: 0 10% 0 10%;"> <br>
+            <p style="margin: 0 10% 25px 10%; line-height: 1.8;">
                 Gutiérrez Mueblería nació con el propósito de ofrecer muebles duraderos, modernos y funcionales.
                 Desde nuestros inicios en Tlaquepaque, Jalisco, hemos combinado tradición y diseño para crear
                 espacios con identidad.
                 <br><br>
-                Gutiérrez Mueblería nació como un negocio familiar en Tlajomulco, Jalisco, en el año XXXX.
+                Gutiérrez Mueblería nació como un negocio familiar en Tlajomulco, Jalisco.
                 Desde sus inicios, surgió del deseo de crear un espacio donde las personas se sintieran cómodas adquiriendo lo esencial para su hogar, combinando calidad, confianza y un servicio cercano. Así fue como nació el nombre “Gutiérrez Mueblería”, reflejando el esfuerzo, la unión y el legado de una familia dedicada a amueblar cada hogar de Jalisco con piezas que perduran en el tiempo.
                 <br>
                 A lo largo de los años, hemos mantenido firme el propósito de ofrecer muebles funcionales, duraderos y con diseños modernos, que embellezcan los espacios y se adapten al estilo de vida de nuestros clientes. Cada pieza es el resultado del trabajo comprometido de manos expertas que ponen atención al detalle en cada corte, ensamblado y acabado.
@@ -272,7 +318,7 @@ history {
                 Hoy, Gutiérrez Mueblería continúa creciendo sin perder su esencia familiar, comprometida con seguir equipando hogares con calidad, calidez y tradición.
                 <br>
             </p>
-             <section class="qs-grid section">
+             <section class="qs-grid" style="margin-top: 40px; margin-bottom: 40px;">
             <div class="qs-card">
                 <h3>Misión</h3>
                 <p>Brindar muebles de alta calidad que combinen diseño y funcionalidad, entregando un servicio cercano y confiable.</p>
@@ -294,8 +340,8 @@ history {
             </div>
         </section>
 
-        
-         <h2 style="text-align: center;">POLÍTICAS DE CALIDAD</h2><br><br>
+
+         <h2 style="text-align: center; margin-top: 40px; margin-bottom: 20px;">POLÍTICAS DE CALIDAD</h2>
           <div style="margin: 0 10% 0 10%;">
           <p>En Gutiérrez Muebería nos dedicamos a la comercialización de muebles de alta calidad. Nuestro compromiso es satisfacer plenamente las necesidades y expectativas de nuestros clientes, garantizando productos seguros, duraderos, funcionales y estéticamente atractivos.
             <br><br>
@@ -313,10 +359,10 @@ history {
           </p><br>
           <h4>Mejora Continua</h4>
           <p>Revisar y optimizar constantemente nuestro Sistema de Gestión de Calidad (SGC) y nuestros procesos internos para prevenir errores, aumentar la productividad y reducir los costos de no calidad.</p>
-        </div><br><br><br>
+        </div>
 
 
-        <section class="tradition-section " style="padding: 100px 0;">
+        <section class="tradition-section " style="padding: 60px 0;">
             <div class="container">
                 <div class="tradition-content">
                     <div class="tradition-text">
@@ -328,18 +374,36 @@ history {
                         </p>
                     </div>
                     <div class="tradition-image">
-                        <div class="image-placeholder">Fotografía de la Familia Gutiérrez</div>
+                        <img src="images/fachada.jpeg" alt="Fachada Gutiérrez Mueblería" style="width: 100%; height: 400px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                     </div>
                 </div>
             </div>
         </section>
 
  <!-- Bloques inferiores estilo botones -->
-        <section class="qs-bottom section">
-            <div class="icon-card card"> 📍 <br> Contamos con <br> tienda física <br><br> Visitamos en <br><br> Calle Juárez Eje Sur 23 <br> Tlajomulco De Zúñiga</div>
-            <div class="icon-card card"> 📞 <br> Asesoramiento <br> personalizado <br><br> ¡Contáctanos! <br><br> 33-XXXX-XXXX </div>
-            <div class="icon-card card"> ⭐ <br> Valoraciones <br> destacadas <br><br> Tenemos las <br> mejores reseñas</div>
-            <div class="icon-card card"> ⛟ <br> Envío <br> a domicilio <br><br> Tu pedido llega <br> a donde desees</div>
+        <section class="qs-bottom" style="margin-top: 50px; margin-bottom: 50px;">
+            <div class="icon-card card">
+                <div style="font-size: 40px; margin-bottom: 15px;">📍</div>
+                <h3 style="font-size: 18px; color: var(--color-primario); margin-bottom: 10px;">Contamos con<br>tienda física</h3>
+                <p style="font-size: 14px; color: var(--color-texto-claro); margin-bottom: 8px;">Visítanos en</p>
+                <p style="font-size: 15px; font-weight: 700; color: var(--color-texto);">Calle Juárez Eje Sur 23<br>Tlajomulco De Zúñiga</p>
+            </div>
+            <div class="icon-card card">
+                <div style="font-size: 40px; margin-bottom: 15px;">📞</div>
+                <h3 style="font-size: 18px; color: var(--color-primario); margin-bottom: 10px;">Asesoramiento<br>personalizado</h3>
+                <p style="font-size: 14px; color: var(--color-texto-claro); margin-bottom: 8px;">¡Contáctanos!</p>
+                <p style="font-size: 15px; font-weight: 700; color: var(--color-texto);">33-3333-3333</p>
+            </div>
+            <div class="icon-card card">
+                <div style="font-size: 40px; margin-bottom: 15px;">⭐</div>
+                <h3 style="font-size: 18px; color: var(--color-primario); margin-bottom: 10px;">Valoraciones<br>destacadas</h3>
+                <p style="font-size: 15px; font-weight: 700; color: var(--color-texto);">Tenemos las<br>mejores reseñas</p>
+            </div>
+            <div class="icon-card card">
+                <div style="font-size: 40px; margin-bottom: 15px;">🚚</div>
+                <h3 style="font-size: 18px; color: var(--color-primario); margin-bottom: 10px;">Envío<br>a domicilio</h3>
+                <p style="font-size: 15px; font-weight: 700; color: var(--color-texto);">Tu pedido llega<br>a donde desees</p>
+            </div>
         </section>
 
          
@@ -359,7 +423,7 @@ history {
                 <div class="footer-column">
                     <h3>Información de Contacto</h3>
                     <p>Calle Juárez Eje Sur 23<br>Tlajomulco De Zúñiga</p>
-                    <p>Teléfono: 33-XXXX-XXXX</p>
+                    <p>Teléfono: 33-3333-3333</p>
                     <p>Email: contacto@gutierrezmuebleria.com</p>
                 </div>
                 <div class="footer-column">
